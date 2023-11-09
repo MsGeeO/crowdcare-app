@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Alert } from 'react-bootstrap';
 import { collection, addDoc } from 'firebase/firestore';
-import { db } from 'firebase/utils';
 import NavigationBar from '../Navbar/Navigation';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
@@ -47,7 +46,7 @@ const BookAppointment = () => {
         message,
       };
 
-      const docRef = await addDoc(collection(db, 'appointments'), appointmentData);
+      const docRef = await addDoc(collection('db', 'appointments'), appointmentData);
 
       setFullName('');
       setEmail('');
