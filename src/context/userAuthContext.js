@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react';
-import { auth } from '../firebase';
+import { getAuth } from 'firebase/auth';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -18,7 +18,7 @@ export function UserAuthContextProvider({ children }) {
   const [verificationEmailSent, setVerificationEmailSent] = useState(false);
 
   function logIn(email, password) {
-    return signInWithEmailAndPassword(auth, email, password);
+    return signInWithEmailAndPassword(getAuth, email, password);
   }
 
   async function signUp(email, password) {
@@ -34,7 +34,7 @@ export function UserAuthContextProvider({ children }) {
     }
 
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(getAuth, email, password);
       const user = userCredential.user;
 
       await sendEmailVerification(user);
@@ -48,16 +48,16 @@ export function UserAuthContextProvider({ children }) {
   }
 
   function logOut() {
-    return signOut(auth);
+    return signOut(getAuth);
   }
 
   function googleSignIn() {
     const googleAuthProvider = new GoogleAuthProvider();
-    return signInWithPopup(auth, googleAuthProvider);
+    return signInWithPopup(getAuth, googleAuthProvider);
   }
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
+    const unsubscribe = onAuthStateChanged(getAuth, (currentuser) => {
       console.log("Auth", currentuser);
       setUser(currentuser);
     });
