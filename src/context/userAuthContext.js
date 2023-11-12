@@ -1,5 +1,5 @@
-import { createContext, useContext, useEffect, useState } from 'react';
-import { getAuth } from 'firebase/auth';
+import { createContext, useContext, useEffect, useState } from "react";
+import { getAuth } from "firebase/auth";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -8,8 +8,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   sendEmailVerification,
-} from 'firebase/auth';
-
+} from "firebase/auth";
 
 const userAuthContext = createContext();
 
@@ -22,26 +21,29 @@ export function UserAuthContextProvider({ children }) {
   }
 
   async function signUp(email, password) {
-    const allowedProviders = ['gmail.com', 'yahoo.com', 'outlook.com'];
-    const emailProvider = email.split('@')[1]?.toLowerCase();
+    const allowedProviders = ["gmail.com", "yahoo.com", "outlook.com"];
+    const emailProvider = email.split("@")[1]?.toLowerCase();
 
     if (!emailProvider || !allowedProviders.includes(emailProvider)) {
-      throw new Error('Invalid Email Provider');
+      throw new Error("Invalid Email Provider");
     }
 
     if (password.length < 6) {
-      throw new Error('Password must be at least 6 characters');
+      throw new Error("Password must be at least 6 characters");
     }
 
     try {
-      const userCredential = await createUserWithEmailAndPassword(getAuth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(
+        getAuth,
+        email,
+        password
+      );
       const user = userCredential.user;
 
       await sendEmailVerification(user);
 
       setVerificationEmailSent(true);
       return user;
-
     } catch (error) {
       throw error;
     }
@@ -56,20 +58,27 @@ export function UserAuthContextProvider({ children }) {
     return signInWithPopup(getAuth, googleAuthProvider);
   }
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(getAuth, (currentuser) => {
-      console.log("Auth", currentuser);
-      setUser(currentuser);
-    });
+  // useEffect(() => {
+  //   const unsubscribe = onAuthStateChanged(getAuth, (currentuser) => {
+  //     console.log("Auth", currentuser);
+  //     setUser(currentuser);
+  //   });
 
-    return () => {
-      unsubscribe();
-    };
-  }, []);
+  //   return () => {
+  //     unsubscribe();
+  //   };
+  // }, []);
 
   return (
     <userAuthContext.Provider
-      value={{ user, logIn, signUp, logOut, googleSignIn, verificationEmailSent }}
+      value={{
+        user,
+        logIn,
+        signUp,
+        logOut,
+        googleSignIn,
+        verificationEmailSent,
+      }}
     >
       {children}
     </userAuthContext.Provider>
