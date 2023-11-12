@@ -10,6 +10,8 @@ import {
   sendEmailVerification,
 } from "firebase/auth";
 
+import { auth } from "../firebase";
+
 const userAuthContext = createContext();
 
 export function UserAuthContextProvider({ children }) {
@@ -17,7 +19,7 @@ export function UserAuthContextProvider({ children }) {
   const [verificationEmailSent, setVerificationEmailSent] = useState(false);
 
   function logIn(email, password) {
-    return signInWithEmailAndPassword(getAuth, email, password);
+    return signInWithEmailAndPassword(auth, email, password);
   }
 
   async function signUp(email, password) {
@@ -34,7 +36,7 @@ export function UserAuthContextProvider({ children }) {
 
     try {
       const userCredential = await createUserWithEmailAndPassword(
-        getAuth,
+        auth,
         email,
         password
       );
