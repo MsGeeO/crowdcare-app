@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Alert } from 'react-bootstrap';
-import { collection, addDoc } from 'firebase/firestore';
-import NavigationBar from '../Navbar/Navigation';
-import Swal from 'sweetalert2';
-import withReactContent from 'sweetalert2-react-content';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Alert } from "react-bootstrap";
+import { collection, addDoc } from "firebase/firestore";
+import NavigationBar from "../Navbar/Navigation";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 import {
   PageContainer,
   FormContainer,
@@ -17,20 +17,19 @@ import {
   FormInput,
   StyledTextarea,
   ButtonContainer,
-  FormButton
-} from './BookNowStyling';
-
+  FormButton,
+} from "./BookNowStyling";
 
 const MySwal = withReactContent(Swal);
 
 /* Creates Booking page layout for the website. */
 /* Firebase configuration for storing booking data from users. */
 const BookAppointment = () => {
-  const [fullName, setFullName] = useState('');
-  const [email, setEmail] = useState('');
-  const [date, setDate] = useState('');
-  const [time, setTime] = useState('');
-  const [message, setMessage] = useState('');
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+  const [message, setMessage] = useState("");
   const [bookingStatus, setBookingStatus] = useState(null);
   const navigate = useNavigate();
 
@@ -46,13 +45,16 @@ const BookAppointment = () => {
         message,
       };
 
-      const docRef = await addDoc(collection('db', 'appointments'), appointmentData);
+      const docRef = await addDoc(
+        collection("db", "appointments"),
+        appointmentData
+      );
 
-      setFullName('');
-      setEmail('');
-      setDate('');
-      setTime('');
-      setMessage('');
+      setFullName("");
+      setEmail("");
+      setDate("");
+      setTime("");
+      setMessage("");
 
       setBookingStatus(true);
 
@@ -61,16 +63,16 @@ const BookAppointment = () => {
       }, 4000);
 
       MySwal.fire({
-        title: 'Appointment Booked! Create An Account?',
-        icon: 'success',
+        title: "Appointment Booked! Create An Account?",
+        icon: "success",
         showCancelButton: true,
-        confirmButtonText: 'Yes',
-        cancelButtonText: 'No',
+        confirmButtonText: "Yes",
+        cancelButtonText: "No",
       }).then((result) => {
         if (result.isConfirmed) {
-          navigate('/signup');
+          navigate("/signup");
         } else {
-          navigate('/');
+          navigate("/");
         }
       });
     } catch (error) {
@@ -78,72 +80,108 @@ const BookAppointment = () => {
 
       setTimeout(() => {
         setBookingStatus(null);
-    }, 4000);
-  }
-};
+      }, 4000);
+    }
+  };
 
-return (
+  return (
     <>
-     <PageContainer>
-       <NavigationBar />
-       <FormContainer>
-        <FormWrap>
-          <FormContent>
-            <Form onSubmit={handleSubmit}>
-            {bookingStatus === false && (
-              <Alert variant="danger">Appointment Booking Failed. Give it another Try.</Alert>
-            )}
-            <FormTitle>BOOK YOUR FIRST FREE APPOINTMENT!</FormTitle>
-            <div><RequiredIndicator><FormLabel>Full Name</FormLabel> *</RequiredIndicator></div>
-            <div>
-             <FormInput
-               type="text"
-               id="fullName"
-               value={fullName}
-               onChange={(e) => setFullName(e.target.value)} required />
-            </div>
-            
-            <div><RequiredIndicator><FormLabel>Email</FormLabel> *</RequiredIndicator></div>
-            <div>
-             <FormInput
-               type="email"
-               id="email"
-               value={email}
-               onChange={(e) => setEmail(e.target.value)} required />
-            </div>
-            
-            <div><RequiredIndicator><FormLabel>Date</FormLabel> *</RequiredIndicator></div>
-            <div>
-             <FormInput
-              type="date"
-              id="date"
-              value={date}
-              onChange={(e) => setDate(e.target.value)} required />
-            </div>
-            
-            <div><RequiredIndicator><FormLabel>Time</FormLabel> *</RequiredIndicator></div>
-            <div>
-             <FormInput
-              type="time"
-              id="time"
-              value={time}
-              onChange={(e) => setTime(e.target.value)} required />
-            </div>
-            
-            <div><RequiredIndicator><FormLabel>Message</FormLabel> *</RequiredIndicator></div>
-            <div>
-             <StyledTextarea
-              rows={3}
-              value={message}
-              onChange={(e) => setMessage(e.target.value)} required />
-            </div>
-            <ButtonContainer><FormButton variant="primary" type="submit">Submit</FormButton></ButtonContainer>
-           </Form>
-          </FormContent>
-        </FormWrap>
-       </FormContainer>
+      <PageContainer>
+        <NavigationBar />
+        <FormContainer>
+          <FormWrap>
+            <FormContent>
+              <Form onSubmit={handleSubmit}>
+                {bookingStatus === false && (
+                  <Alert variant="danger">
+                    Appointment Booking Failed. Give it another Try.
+                  </Alert>
+                )}
+                <FormTitle>BOOK YOUR FIRST FREE APPOINTMENT!</FormTitle>
+                <div>
+                  <RequiredIndicator>
+                    <FormLabel>Full Name</FormLabel> *
+                  </RequiredIndicator>
+                </div>
+                <div>
+                  <FormInput
+                    type="text"
+                    id="fullName"
+                    value={fullName}
+                    onChange={(e) => setFullName(e.target.value)}
+                    required
+                  />
+                </div>
+
+                <div>
+                  <RequiredIndicator>
+                    <FormLabel>Email</FormLabel> *
+                  </RequiredIndicator>
+                </div>
+                <div>
+                  <FormInput
+                    type="email"
+                    id="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                </div>
+
+                <div>
+                  <RequiredIndicator>
+                    <FormLabel>Date</FormLabel> *
+                  </RequiredIndicator>
+                </div>
+                <div>
+                  <FormInput
+                    type="date"
+                    id="date"
+                    value={date}
+                    onChange={(e) => setDate(e.target.value)}
+                    required
+                  />
+                </div>
+
+                <div>
+                  <RequiredIndicator>
+                    <FormLabel>Time</FormLabel> *
+                  </RequiredIndicator>
+                </div>
+                <div>
+                  <FormInput
+                    type="time"
+                    id="time"
+                    value={time}
+                    onChange={(e) => setTime(e.target.value)}
+                    required
+                  />
+                </div>
+
+                <div>
+                  <RequiredIndicator>
+                    <FormLabel>Message</FormLabel> *
+                  </RequiredIndicator>
+                </div>
+                <div>
+                  <StyledTextarea
+                    rows={3}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    required
+                  />
+                </div>
+                <ButtonContainer>
+                  <FormButton variant="primary" type="submit">
+                    Submit
+                  </FormButton>
+                </ButtonContainer>
+              </Form>
+            </FormContent>
+          </FormWrap>
+        </FormContainer>
       </PageContainer>
-    </>  
+    </>
   );
 };
 
