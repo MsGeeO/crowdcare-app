@@ -19,6 +19,7 @@ import {
   ButtonContainer,
   FormButton,
 } from "./BookNowStyling";
+import { store } from "../../firebase";
 
 const MySwal = withReactContent(Swal);
 
@@ -46,7 +47,7 @@ const BookAppointment = () => {
       };
 
       const docRef = await addDoc(
-        collection("db", "appointments"),
+        collection(store, "appointments"),
         appointmentData
       );
 

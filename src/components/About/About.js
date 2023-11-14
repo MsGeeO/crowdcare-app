@@ -89,7 +89,7 @@ const AboutPage = () => {
        </TeamCard>
        
        <TeamCard><Image src={require('../../images/Carer03.jpg')} alt='person' />
-         <TeamCardHeader>Ms. Nsima Dick</TeamCardHeader>
+         <TeamCardHeader>Mrs. Lauretta Ojimba-Amadi</TeamCardHeader>
          <TeamCardContent>Administrative Carer | Admin. Director</TeamCardContent>
          <IconWrapper>
           <FaLinkedin  size='20px' color='#900C3F' />
@@ -109,7 +109,7 @@ const AboutPage = () => {
        </TeamCard>
        
        <TeamCard><Image src={require('../../images/Carer05.jpg')} alt='person' />
-         <TeamCardHeader>Mrs. Queen-Glory Ndukwe</TeamCardHeader>
+         <TeamCardHeader>Mrs. Chinyere-Nma Chinenyeze</TeamCardHeader>
          <TeamCardContent>Monitoring and Evaluation Lead</TeamCardContent>
          <IconWrapper>
           <FaLinkedin  size='20px' color='#900C3F' />

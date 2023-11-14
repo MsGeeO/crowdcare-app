@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getDatabase } from "firebase/database";
 import { getAuth, initializeAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -11,7 +12,7 @@ import { getAuth, initializeAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfigBKP = {
+const firebaseConfig = {
   apiKey: "AIzaSyAPbi5-xdX8s3h7aK_0S38z1VjY4kfGSk4",
   authDomain: "crowd-care.firebaseapp.com",
   databaseURL: "https://crowd-care-default-rtdb.firebaseio.com",
@@ -21,7 +22,7 @@ const firebaseConfigBKP = {
   appId: "1:457828323552:web:71b6458d2dea63b0a68085",
   measurementId: "G-HX6P5JD5Y9",
 };
-const firebaseConfig = {
+const firebaseConfigBKP = {
   apiKey: "AIzaSyDB9lm-NnnjHY5QKTIojSZyyzM7HgCI57w",
   authDomain: "deamykiel-ecommerce.firebaseapp.com",
   projectId: "deamykiel-ecommerce",
@@ -39,3 +40,4 @@ const analytics = getAnalytics(app);
 
 export const auth = getAuth(app);
 export const db = getDatabase(app);
+export const store = getFirestore(app);
