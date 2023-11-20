@@ -1,3 +1,6 @@
+// Hero.js
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '../ButtonStyling';
 import {
   HeroContainer,
@@ -7,23 +10,23 @@ import {
   HeroParagraph
 } from './HeroStyling';
 
-/* Create Banner section that serves as the primary part of the landing page along with topbar. */
+// Import your banner image
+import backgroundImage from '../../images/background.jpeg';
+
 const Hero = () => {
   return (
     <>
-     <HeroContainer>
-       <HeroContent>
-         <HeroContentText>
+      <HeroContainer style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover' }}>
+        <HeroContent>
+          <HeroContentText>
             <HeroTitle>Your Events Success and Safety Starts Here</HeroTitle>
             <HeroParagraph>
-            Book Your First Appointment & Prioritize Your Event's
-            Safety at Crowd Care.
+              Book Your First Appointment & Prioritize Your Event's Safety at Crowd Care.
             </HeroParagraph>
             <Button to='/services'>Learn More</Button>
-         </HeroContentText>
-        </HeroContent>        
-     </HeroContainer>
-
+          </HeroContentText>
+        </HeroContent>
+      </HeroContainer>
     </>
   );
 };

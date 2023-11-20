@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import NotesImg from '../../images/Notes.jpg';
+import NotesImg from '../../images/Notes.jpeg';
 
 export const PageContainer = styled.div`
  background-image: url(${NotesImg});

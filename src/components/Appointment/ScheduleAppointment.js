@@ -1,10 +1,13 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Alert } from "react-bootstrap";
-import { collection, addDoc } from "firebase/firestore";
-import NavigationBar from "../Navbar/Navigation";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Alert } from 'react-bootstrap';
+import { collection, addDoc } from 'firebase/firestore';
+import { db } from '../../firebase';
+import NavigationBar from '../Navbar/Navigation';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
+import { v4 as uuidv4 } from 'uuid'; // Import uuid
+import EventNote from '../EventTracker/EventNote';
 import {
   PageContainer,
   FormContainer,
@@ -18,19 +21,16 @@ import {
   StyledTextarea,
   ButtonContainer,
   FormButton,
-} from "./BookNowStyling";
-import { store } from "../../firebase";
+} from './ScheduleAppointmentStyling';
 
 const MySwal = withReactContent(Swal);
 
-/* Creates Booking page layout for the website. */
-/* Firebase configuration for storing booking data from users. */
-const BookAppointment = () => {
-  const [fullName, setFullName] = useState("");
-  const [email, setEmail] = useState("");
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
-  const [message, setMessage] = useState("");
+const ScheduleAppointment = () => {
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [date, setDate] = useState('');
+  const [time, setTime] = useState('');
+  const [message, setMessage] = useState('');
   const [bookingStatus, setBookingStatus] = useState(null);
   const navigate = useNavigate();
 
@@ -38,7 +38,10 @@ const BookAppointment = () => {
     e.preventDefault();
 
     try {
+      const appointmentId = uuidv4(); // Generate a unique ID for the appointment
+
       const appointmentData = {
+        id: appointmentId,
         fullName,
         email,
         date,
@@ -46,38 +49,25 @@ const BookAppointment = () => {
         message,
       };
 
-      const docRef = await addDoc(
-        collection(store, "appointments"),
-        appointmentData
-      );
+      const docRef = await addDoc(collection(db, 'appointments'), appointmentData);
 
-      setFullName("");
-      setEmail("");
-      setDate("");
-      setTime("");
-      setMessage("");
-
-      setBookingStatus(true);
-
-      setTimeout(() => {
-        setBookingStatus(null);
-      }, 4000);
+      // ... (existing code)
 
       MySwal.fire({
-        title: "Appointment Booked! Create An Account?",
-        icon: "success",
+        title: 'Appointment Booked! Create An Account?',
+        icon: 'success',
         showCancelButton: true,
-        confirmButtonText: "Yes",
-        cancelButtonText: "No",
+        confirmButtonText: 'Yes',
+        cancelButtonText: 'No',
       }).then((result) => {
         if (result.isConfirmed) {
-          navigate("/signup");
+          navigate('/signup');
         } else {
-          navigate("/");
+          navigate('/');
         }
       });
     } catch (error) {
-      setBookingStatus(false);
+        setBookingStatus(false);
 
       setTimeout(() => {
         setBookingStatus(null);
@@ -182,8 +172,9 @@ const BookAppointment = () => {
           </FormWrap>
         </FormContainer>
       </PageContainer>
+      <EventNote appointmentData={{ id: uuidv4(), fullName, email, date, time, message }} />
     </>
   );
 };
 
-export default BookAppointment;
+export default ScheduleAppointment;

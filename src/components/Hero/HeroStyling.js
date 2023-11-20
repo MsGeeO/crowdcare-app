@@ -46,7 +46,7 @@ export const HeroContentText = styled.div`
    padding-bottom: 1rem;
    margin-top: 9rem;
    background-color: transparent;
-   color: #fff;
+   color: #000080;
 
    @media only screen and (max-width: 768px) {
       width: 80%;

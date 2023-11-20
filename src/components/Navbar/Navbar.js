@@ -1,4 +1,6 @@
+// Navbar.js
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaBars, FaHeartbeat } from 'react-icons/fa';
 import {
   Nav,
@@ -14,36 +16,41 @@ import {
   NavbarButtonLink
 } from './NavbarStyling';
 
-/* Creates website topbar with icon, navigations links and buttons that . */
-const Navbar = ({toggle}) => {
+const Navbar = ({ toggle }) => {
   return (
     <>
       <Nav>
         <NavbarContainer>
-            <NavbarLogo to='/'><Icon><FaHeartbeat size={45}/></Icon>CC</NavbarLogo>
-            <MobileIcon onClick={toggle}>
+          <NavbarLogo to='/'>
+            <Icon><FaHeartbeat size={45} /></Icon>CC
+          </NavbarLogo>
+          <MobileIcon onClick={toggle}>
             <FaBars />
-            </MobileIcon>
-            <NavbarMenu>
-              <NavbarItems>
-                <NavbarLink to='/about'>ABOUT</NavbarLink>
-              </NavbarItems>
-              <NavbarItems>
-                <NavbarLink to='/services'>SERVICES</NavbarLink>
-              </NavbarItems>
-              <NavbarItems>
-                <NavbarLink>BLOG</NavbarLink>
-              </NavbarItems>
-               <NavbarItems>
-                <NavbarLink to='/contact'>CONTACT</NavbarLink>
-              </NavbarItems>
-            </NavbarMenu>
-            <NavbarButtonOne>
-              <NavbarButtonLink to='/login'>Sign In</NavbarButtonLink>
-            </NavbarButtonOne>
-            <NavbarButtonTwo>
-              <NavbarButtonLink to='/signup'>Sign Up</NavbarButtonLink>
-            </NavbarButtonTwo>
+          </MobileIcon>
+          <NavbarMenu>
+            <NavbarItems>
+              <NavbarLink to='/home'>Home</NavbarLink>
+            </NavbarItems>
+            <NavbarItems>
+              <NavbarLink to='/about'>About Us</NavbarLink>
+            </NavbarItems>
+            <NavbarItems>
+              <NavbarLink to='/services'>Our Services</NavbarLink>
+            </NavbarItems>
+            <NavbarItems>
+              <NavbarLink to='/contact'>Contact Us</NavbarLink>
+            </NavbarItems>
+            <NavbarItems>
+              <Link to='/login'>
+                <NavbarButtonOne>Sign In</NavbarButtonOne>
+              </Link>
+            </NavbarItems>
+            <NavbarItems>
+              <Link to='/signup'>
+                <NavbarButtonTwo>Sign Up</NavbarButtonTwo>
+              </Link>
+            </NavbarItems>
+          </NavbarMenu>
         </NavbarContainer>
       </Nav>
     </>

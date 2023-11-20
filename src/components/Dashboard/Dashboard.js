@@ -1,10 +1,10 @@
 import React from "react";
 import { Row, Col, Card } from "antd";
-import BookingImg from "../../images/Booking.jpg";
-import TrackerImg from "../../images/Tracker.jpg";
-import CrowdResourcesImg from "../../images/CrowdResources.jpg";
-import NotesImg from "../../images/Notes.jpg";
-import PaymentImg from "../../images/Payment.jpg";
+import BookingImg from "../../images/Booking.jpeg";
+import TrackerImg from "../../images/Tracker.jpeg";
+import CrowdResourcesImg from "../../images/CrowdResources.jpeg";
+import NotesImg from "../../images/Notes.jpeg";
+import PaymentImg from "../../images/Payment.jpeg";
 import {
   DashboardContainer,
   DashboardTitle,
@@ -25,7 +25,7 @@ const Dashboard = () => {
       title: "Schedule Appointments",
       description: "View your previous events and Book New Ones.",
       image: BookingImg,
-      route: "/book",
+      route: "/scheduleappointment",
     },
 
     {
@@ -33,7 +33,7 @@ const Dashboard = () => {
       title: "Event Tracker",
       description: "Track and Manage Your Scheduled Events Information.",
       image: TrackerImg,
-      route: "/event",
+      route: "/eventtracker",
     },
 
     {

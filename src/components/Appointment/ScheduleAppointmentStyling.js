@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import BookImg from '../../images/AppointmentBg.jpg';
+import BookImg from '../../images/AppointmentBg.jpeg';
 import '../../fonts/webfont.css';
 
 export const PageContainer = styled.div`

@@ -96,7 +96,7 @@ const LoginPage = () => {
                   <hr />
                   <CustomGoogleButton onClick={handleGoogleSignIn}>Sign in with Google</CustomGoogleButton>
                   <SlidePrompt>
-                    New to PAX? <Prompt to="/signup">Create an account</Prompt>
+                    First Time? <Prompt to="/signup">Create an account</Prompt>
                   </SlidePrompt>
                 </Form>
               </FormContent>

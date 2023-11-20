@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link as LinkRouter } from 'react-router-dom';
-import ServicesImg from '../../images/ServicesBg.jpg';
+import ServicesImg from '../../images/ServicesBg.jpeg';
 import '../../fonts/webfont.css';
 
 export const PageContainer = styled.div`
@@ -31,7 +31,7 @@ export const HeaderTitle = styled.h1`
   padding-left: 2rem;
   margin-left: 1rem;
   width: 50%;
-  color: #09798C;
+  color: #FFFFFF;
 
   @media only screen and (max-width: 768px) {
     font-size: 4rem;

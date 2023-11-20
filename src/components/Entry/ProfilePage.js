@@ -21,7 +21,7 @@ const ProfilePage = () => {
   };
 
   return (
-    <PageContainer>
+    <PageContainer style={{ backgroundImage: `url('background.jpg')` }}>
       <Dashboard />
       {error && <Alert variant="danger">{error}</Alert>}
       <Button to="/" onClick={handleLogout}>Log Out</Button>

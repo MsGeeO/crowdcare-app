@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import ContactImg from '../../images/ContactBg.jpg';
+import ContactImg from '../../images/ContactBg.jpeg';
 import '../../fonts/webfont.css';
 
 export const PageContainer = styled.div`

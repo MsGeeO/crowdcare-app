@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Alert } from 'react-bootstrap';
 import { collection, addDoc } from 'firebase/firestore';
+import { db } from '../../firebase';
 import {
   PageContainer,
   FormContainer,
@@ -36,7 +37,7 @@ const ContactForm = () => {
         message,
       };
 
-      const docRef = await addDoc(collection('db', 'contacts'), contactData);
+      const docRef = await addDoc(collection(db, 'contacts'), contactData);
 
       setFullName('');
       setEmail('');
@@ -113,4 +114,3 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
-

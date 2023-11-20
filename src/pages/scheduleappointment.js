@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import BookAppointment from '../components/Appointment/BookNow';
+import ScheduleAppointment from '../components/Appointment/ScheduleAppointment';
 
-const Book = () => {
+const Appointment = () => {
   const [isOpen, setIsOpen] = useState(false)
   const toggle = () => {
     setIsOpen(!isOpen)
@@ -9,8 +9,8 @@ const Book = () => {
 
   return (
     <>
-      <BookAppointment />
+      <ScheduleAppointment />
     </>
   );
 };
-export default Book;
+export default Appointment;

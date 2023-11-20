@@ -3,13 +3,13 @@ import { Link as LinkRouter } from 'react-router-dom';
 
 export const Nav = styled.nav`
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   position: sticky;
   height: 90px;
-  z-index: 10;
+  z-index: 0;
   top: 0;
-  background-color: #e6e6e6;
+  background-color: #000080;
 
   @media screen and (max-width: 968px) {
     transition: 0.3s all ease;
@@ -30,11 +30,11 @@ export const NavbarContainer = styled.div`
 export const NavbarLogo = styled(LinkRouter)`
   display: flex;
   justify-self: flex-start;
-  align-items: center;
+  align-items: left;
   margin-left: 24px;
   font-size: 2rem;
   font-weight: 400;
-  color: #09798C;
+  color: #fff;
   text-decoration: none;
   cursor: pointer;
 
@@ -46,7 +46,7 @@ export const NavbarLogo = styled(LinkRouter)`
 export const Icon = styled.div`
   padding-right: 5px;
   padding-bottom: 4px;
-  color: #09798C;
+  color: #fff;
 
   @media screen and (max-width: 768px) {
     color: #fff;
@@ -71,10 +71,10 @@ export const MobileIcon = styled.div`
 
 export const NavbarMenu = styled.ul`
   display: flex;
-  align-items: center;
+  align-items: left;
   list-style: none;
   margin-right: 1rem;
-  text-align: center;
+  text-align: left;
   margin-top: 1rem;
 
   @media screen and (max-width: 768px) {
@@ -84,14 +84,16 @@ export const NavbarMenu = styled.ul`
 
 export const NavbarItems = styled.li`
   font-size: 17px;
+  font-weight: bolder;
+  align-items: left;
 `;
 
 export const NavbarLink = styled(LinkRouter)`
   display: flex;
-  align-items: center;
+  align-items: left;
   padding: 0 1rem;
   height: 100%;
-  color: #09798C;
+  color: #fff;
   text-decoration: none;
   cursor: pointer;
 
@@ -103,8 +105,8 @@ export const NavbarLink = styled(LinkRouter)`
 
 export const NavbarButtonOne = styled.nav`
   display: flex;
-  margin-right: -40px;
-  margin-left: -20px;
+  margin-right: 90px;
+  margin-left: 60px;
   margin-top: 0.8;
   padding-bottom: 1rem;
   border-radius: 3px;
@@ -118,8 +120,8 @@ export const NavbarButtonOne = styled.nav`
 
 export const NavbarButtonTwo = styled.nav`
   display: flex;
-  margin-right: -30px;
-  margin-left: -40px;
+  margin-right: -80px;
+  margin-left: -60px;
   padding-bottom: 1rem;
   padding-right: 1rem;
   border-radius: 3px;
@@ -139,7 +141,7 @@ export const NavbarButtonLink = styled(LinkRouter)`
   color: #fff;
   font-size: 1rem;
   text-decoration: none;
-  background-color: #000;
+  background-color: ##000080;
   cursor: pointer;
 
   @media only screen and (max-width: 1440px) {

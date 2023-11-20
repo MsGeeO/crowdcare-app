@@ -5,9 +5,7 @@ import {
     CloseIcon,
     SidebarWrapper,
     SidebarMenu,
-    SidebarLink,
-    SidebarButtonWrap,
-    SidebarRoute
+    SidebarLink
 } from './SidebarStyling';
 
 /* Creates website navigation sidebar to be used in minimized screen or mobile dimensions. */ 
@@ -20,14 +18,10 @@ const Sidebar = ( {isOpen, toggle} ) => {
             </Icon>
             <SidebarWrapper>
                 <SidebarMenu>
-                    <SidebarLink to='/about' onClick={toggle}>About</SidebarLink>
-                    <SidebarLink to='/services' onClick={toggle}>Services</SidebarLink>
-                    <SidebarLink>Blog</SidebarLink>
-                    <SidebarLink to='/contact' onClick={toggle}>Contact</SidebarLink>
-                </SidebarMenu>
-                <SidebarButtonWrap>
-                    <SidebarRoute to="/login">Sign In</SidebarRoute>
-                </SidebarButtonWrap>
+                    <SidebarLink to='/about' onClick={toggle}>About Us</SidebarLink>
+                    <SidebarLink to='/services' onClick={toggle}>Our Services</SidebarLink>
+                    <SidebarLink to='/contact' onClick={toggle}>Contact Us</SidebarLink>
+                </SidebarMenu>                
             </SidebarWrapper>
         </SidebarContainer>
     </>
