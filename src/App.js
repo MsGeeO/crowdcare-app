@@ -11,7 +11,8 @@ import ProfilePage from './pages/profile';
 import ScheduleAppointment from './pages/scheduleappointment';
 import EventTracker from './pages/eventtracker';
 import EventNote from './pages/eventnote';
-import NoteContext from './context/NoteContext';
+import NoteContext, { NoteProvider } from './context/NoteContext'; // Import NotesProvider
+
 import ProtectedRoute from './components/Entry/ProtectedRoute';
 import { UserAuthContextProvider } from './context/userAuthContext';
 import './App.css';
@@ -20,7 +21,7 @@ function App() {
   return (
     <Router>
       <UserAuthContextProvider>
-        <NoteContext.Provider>
+        <NoteProvider> {/* Wrap the components with NotesProvider */}
           <Routes>
             <Route
               path="/profile"
@@ -44,7 +45,7 @@ function App() {
             {/* Include a route for the EventNote */}
             <Route path="/eventnote" element={<EventNote />} />
           </Routes>
-        </NoteContext.Provider>
+        </NoteProvider>
       </UserAuthContextProvider>
     </Router>
   );
