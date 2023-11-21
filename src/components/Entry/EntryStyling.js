@@ -87,7 +87,7 @@ export const FormTitle = styled.h1`
   align-items: center;
   font-size: 35px;
   font-weight: bold;
-  color: #09798C;
+  color: #000080;
   padding-top: 10px;
   padding-bottom: 10px;
   margin-top: 2rem;

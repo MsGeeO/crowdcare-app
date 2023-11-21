@@ -41,7 +41,7 @@ const Dashboard = () => {
       title: "Event Notes",
       description: "Access Notes, Details and Feedback regarding your event.",
       image: NotesImg,
-      route: "/event-notes",
+      route: "/eventnote",
     },
 
     {

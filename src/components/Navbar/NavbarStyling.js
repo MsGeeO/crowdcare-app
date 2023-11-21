@@ -9,11 +9,11 @@ export const Nav = styled.nav`
   height: 90px;
   z-index: 0;
   top: 0;
-  background-color: #000080;
+  background-color: #fff;
 
   @media screen and (max-width: 968px) {
     transition: 0.3s all ease;
-    background-color: #09798C;
+    background-color: #000080;
   }
 `;
 
@@ -33,20 +33,20 @@ export const NavbarLogo = styled(LinkRouter)`
   align-items: left;
   margin-left: 24px;
   font-size: 2rem;
-  font-weight: 400;
-  color: #fff;
+  font-weight: 1000;
+  color: #000080;
   text-decoration: none;
   cursor: pointer;
 
   @media screen and (max-width: 768px) {
-    color: #fff;
+    color: ##000080;
   }
 `;
 
 export const Icon = styled.div`
   padding-right: 5px;
   padding-bottom: 4px;
-  color: #fff;
+  color: #000080;
 
   @media screen and (max-width: 768px) {
     color: #fff;
@@ -55,7 +55,7 @@ export const Icon = styled.div`
 
 export const MobileIcon = styled.div`
   display: none;
-  color: #fff;
+  color: ##000080;
   margin-right: 1rem;
 
   @media screen and (max-width: 768px) {
@@ -86,6 +86,7 @@ export const NavbarItems = styled.li`
   font-size: 17px;
   font-weight: bolder;
   align-items: left;
+  colour: #000080;
 `;
 
 export const NavbarLink = styled(LinkRouter)`
@@ -93,13 +94,13 @@ export const NavbarLink = styled(LinkRouter)`
   align-items: left;
   padding: 0 1rem;
   height: 100%;
-  color: #fff;
+  color: ##000080;
   text-decoration: none;
   cursor: pointer;
 
   &:hover {
-    font-weight: bold;
-    border-bottom: 2px solid #09798C;
+    font-weight: bolder;
+    border-bottom: 2px solid #000080;
   }
 `;
 

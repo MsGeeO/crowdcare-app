@@ -28,7 +28,7 @@ export const Icon = styled.div`
 `;
 
 export const CloseIcon = styled(FaTimes)`
-  color: #fff;
+  color: #000080;
   margin-right: 1rem;
 `;
 
@@ -45,7 +45,7 @@ export const SidebarMenu = styled.ul`
 `;
 
 export const SidebarWrapper = styled.div`
-   color: #fff;
+   color: #000080;
 `;
 
 export const SidebarLink = styled(LinkRouter)`
@@ -56,7 +56,7 @@ export const SidebarLink = styled(LinkRouter)`
   text-decoration: none;
   list-style: none;
   transition: 0.2s ease-in-out;
-  color: #fff;
+  color: #000080;
   cursor: pointer;
 
   &:hover {

@@ -46,7 +46,8 @@ export const HeroContentText = styled.div`
    padding-bottom: 1rem;
    margin-top: 9rem;
    background-color: transparent;
-   color: #000080;
+   color: #fff;
+   font-weight: bolder;
 
    @media only screen and (max-width: 768px) {
       width: 80%;
@@ -65,6 +66,7 @@ export const HeroTitle = styled.h1`
    font-weight: 400;
    letter-spacing: 0.3rem;
    margin-bottom: 3px;
+   font-weight: bolder;
 
    @media only screen and (max-width: 480px) {
       font-size: 24px;

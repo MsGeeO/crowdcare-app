@@ -11,7 +11,7 @@ import {
 } from './HeroStyling';
 
 // Import your banner image
-import backgroundImage from '../../images/background.jpeg';
+import backgroundImage from '../../images/background.jpg';
 
 const Hero = () => {
   return (
