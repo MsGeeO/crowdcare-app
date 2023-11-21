@@ -7,7 +7,7 @@ const EventNoteContainer = styled.div`
   padding: 16px;
   margin-bottom: 16px;
   border-radius: 8px;
-  background-image: url(${props => props.NoteImg});
+  background-image: linear-gradient(to top right, #0b0a0a61, #0b0a0a30), url(${NoteImg});
   background-size: cover;
   color: #fff;
 `;
