@@ -7,7 +7,7 @@ const EventNoteContainer = styled.div`
   padding: 16px;
   margin-bottom: 16px;
   border-radius: 8px;
-  background-image: url(${props => props.NoteImg}); /* Use ${} to reference a variable or prop */
+  background-image: url(${props => props.NoteImg});
   background-size: cover;
   color: #fff;
 `;
