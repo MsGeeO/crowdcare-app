@@ -1,7 +1,7 @@
 // Navbar.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaBars, FaHeartbeat } from 'react-icons/fa';
+import { FaBars, FaUserShield } from 'react-icons/fa';
 import {
   Nav,
   NavbarContainer,
@@ -22,7 +22,7 @@ const Navbar = ({ toggle }) => {
       <Nav>
         <NavbarContainer>
           <NavbarLogo to='/'>
-            <Icon><FaHeartbeat size={45} /></Icon>CC
+            <Icon><FaUserShield size={45} /></Icon>CROWD-CARE
           </NavbarLogo>
           <MobileIcon onClick={toggle}>
             <FaBars />

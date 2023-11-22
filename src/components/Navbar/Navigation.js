@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navbar, Container } from 'react-bootstrap';
-import { faHeartbeat } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserShield } from '@fortawesome/free-solid-svg-icons';
 
 /* Creates alternative navigation for pages that don't require full topbar action. */
 const NavigationBar = () => {
@@ -10,9 +10,9 @@ const NavigationBar = () => {
       <Container>
         <Navbar.Brand href="/">
           <FontAwesomeIcon
-            icon={faHeartbeat}
+            icon={faUserShield}
             style={{
-              color: '#09798C',
+              color: '#000080',
               fontSize: '50px',
               marginLeft: '35px',
               marginTop: '15px',
@@ -22,8 +22,9 @@ const NavigationBar = () => {
           />
           <span
             style={{
-              color: '#09798C',
+              color: '#000080',
               fontSize: '35px',
+              fontWeight: 'bolder',
               padding: '6px',
               verticalAlign: 'middle'
             }}
