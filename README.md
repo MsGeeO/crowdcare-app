@@ -1,4 +1,4 @@
-![Banner](https://github.com/MsGeeO/my-app/assets/113802790/3bc291f3-0c76-4e95-8b57-a539713ac3b1)
+![Banner](https://github.com/MsGeeO/crowdcare-app/assets/113802790/15322333-533c-4e80-9bda-fc360d2ca9bb)
 
 # Crowd-Care-Web-App
 This Portfolio Project for @HolbertonSchool Software Engineering Program offered by ALX Africa, is my final project for the ALX Software Engineering Programme. It was born out of a need pointed out during our church's worker's congress about a crowd control mechanism during our annual outreach program held at Abuja, Nigeria. This led to me seeking a way to minimize the accident, stampede occurences during the said outreach as this is not the intention of our senior pastors and the entire organizers.
