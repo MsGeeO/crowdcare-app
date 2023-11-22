@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import NoteImg from '../../images/Notes.jpeg';
+import NoteImg from '../../images/Notes.jpg';
 import '../../fonts/webfont.css';
 
 const EventNoteContainer = styled.div`

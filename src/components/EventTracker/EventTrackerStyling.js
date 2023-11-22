@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import TrackerImg from '../../images/Tracker.jpeg';
+import TrackerImg from '../../images/Tracker.jpg';
 import '../../fonts/webfont.css';
 
 export const EventTrackerContainer = styled.div`

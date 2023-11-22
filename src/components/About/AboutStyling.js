@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import TeamImg from '../../images/TeamBg.jpeg';
+import TeamImg from '../../images/TeamBg.jpg';
 import { Link as LinkRouter } from 'react-router-dom';
 import '../../fonts/webfont.css';
 

@@ -7,7 +7,6 @@ import NavigationBar from '../Navbar/Navigation';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import { v4 as uuidv4 } from 'uuid'; // Import uuid
-import EventNote from '../EventTracker/EventNote';
 import {
   PageContainer,
   FormContainer,
@@ -32,6 +31,7 @@ const ScheduleAppointment = () => {
   const [time, setTime] = useState('');
   const [message, setMessage] = useState('');
   const [bookingStatus, setBookingStatus] = useState(null);
+  
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -50,8 +50,6 @@ const ScheduleAppointment = () => {
       };
 
       const docRef = await addDoc(collection(db, 'appointments'), appointmentData);
-
-      // ... (existing code)
 
       MySwal.fire({
         title: 'Appointment Booked! Create An Account?',
@@ -172,7 +170,6 @@ const ScheduleAppointment = () => {
           </FormWrap>
         </FormContainer>
       </PageContainer>
-      <EventNote appointmentData={{ id: uuidv4(), fullName, email, date, time, message }} />
     </>
   );
 };

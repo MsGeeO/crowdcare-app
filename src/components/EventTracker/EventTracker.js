@@ -13,11 +13,12 @@ const EventTracker = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
 
-  const fullName = queryParams.get('fullName');
-  const email = queryParams.get('email');
-  const date = queryParams.get('date');
-  const time = queryParams.get('time');
-  const message = queryParams.get('message');
+  // Ensure that query parameters have fallback values or error handling
+  const fullName = queryParams.get('fullName') || 'N/A';
+  const email = queryParams.get('email') || 'N/A';
+  const date = queryParams.get('date') || 'N/A';
+  const time = queryParams.get('time') || 'N/A';
+  const message = queryParams.get('message') || 'N/A';
 
   const [notesList, setNotesList] = useState([]);
   const navigate = useNavigate();
@@ -41,9 +42,13 @@ const EventTracker = () => {
         <h3>Event Notes</h3>
 
         <NotesList>
-          {notesList.map((note, index) => (
-            <NotesListItem key={index}>{note}</NotesListItem>
-          ))}
+          {notesList.length > 0 ? (
+            notesList.map((note, index) => (
+              <NotesListItem key={index}>{note}</NotesListItem>
+            ))
+          ) : (
+            <p>No event notes available.</p>
+          )}
         </NotesList>
 
         <Link to="/eventnotes">Go to Event Note Page</Link>

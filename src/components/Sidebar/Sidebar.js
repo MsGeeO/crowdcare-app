@@ -1,5 +1,6 @@
 // Sidebar.js
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   SidebarContainer,
   Icon,
@@ -27,6 +28,11 @@ const Sidebar = ({ isOpen, toggle }) => {
       </SidebarContainer>
     </>
   );
+};
+
+Sidebar.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  toggle: PropTypes.func.isRequired,
 };
 
 export default Sidebar;

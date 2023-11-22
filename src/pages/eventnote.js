@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import EventNote from '../components/EventTracker/EventNote'; // Updated import path
 
-const Notes = () => {
+const Note = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => {
     setIsOpen(!isOpen);
@@ -16,4 +16,4 @@ const Notes = () => {
   );
 };
 
-export default Notes;
+export default Note;

@@ -1,9 +1,9 @@
 import React from "react";
 import { Row, Col, Card } from "antd";
 import BookingImg from "../../images/Booking.jpeg";
-import TrackerImg from "../../images/Tracker.jpeg";
+import TrackerImg from "../../images/Tracker.jpg";
 import CrowdResourcesImg from "../../images/CrowdResources.jpeg";
-import NotesImg from "../../images/Notes.jpeg";
+import NotesImg from "../../images/Notes.jpg";
 import PaymentImg from "../../images/Payment.jpeg";
 import {
   DashboardContainer,

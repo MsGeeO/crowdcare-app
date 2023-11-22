@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link as LinkRouter } from 'react-router-dom';
-import ServicesImg from '../../images/ServicesBg.jpeg';
+import ServicesImg from '../../images/ServicesBg.jpg';
 import '../../fonts/webfont.css';
 
 export const PageContainer = styled.div`
